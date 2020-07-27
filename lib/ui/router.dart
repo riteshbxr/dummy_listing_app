@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../core/consts/route_paths.dart';
 import '../ui/views/home_page.dart';
-import '../ui/views/listing_item_list_page.dart';
+import 'views/films/film_list_page.dart';
 
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {

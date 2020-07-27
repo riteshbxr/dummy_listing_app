@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import '../../core/services/listing_service.dart';
-import '../../ui/widgets/base_sacaffold.dart';
-import '../widgets/film_list_item_widget.dart';
+import '../../../core/services/listing_service.dart';
+import '../../widgets/base_sacaffold.dart';
+import 'film_list_item_widget.dart';
 import 'package:provider/provider.dart';
 
 class FilmListPage extends StatefulWidget {

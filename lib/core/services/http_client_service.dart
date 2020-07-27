@@ -9,19 +9,21 @@ class HttpClientService {
   String baseUrl;
   HttpClientService(this.baseUrl);
   Future<String> fetchData(String api) async {
-    var data = await http.Client().get("$baseUrl/$api");
+    var data = await http.get("$baseUrl/$api");
     if (data.statusCode == 200) {
       return data.body;
     } else {
       throw HttpException(
-          "Failed with StatudCode ${data.statusCode} & ${data.reasonPhrase}");
+          "Failed with Status Code ${data.statusCode} & ${data.reasonPhrase}");
     }
   }
 }
 
 class FakeHttpClientService extends HttpClientService {
   FakeHttpClientService() : super(null);
+
   Future<String> fetchData(String api) async {
+    await Future.delayed(Duration(seconds: 2));
     switch (api) {
       case ApiUrls.fetchListingApi:
         return ApiDummyOutputs[api];
