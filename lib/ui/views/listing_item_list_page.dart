@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import '../../core/services/listing_service.dart';
 import '../../ui/widgets/base_sacaffold.dart';
-import '../../ui/widgets/item_listing_item_widget.dart';
+import '../widgets/film_list_item_widget.dart';
 import 'package:provider/provider.dart';
 
-class ListingItemListPage extends StatefulWidget {
+class FilmListPage extends StatefulWidget {
   @override
-  _ListingItemListPageState createState() => _ListingItemListPageState();
+  _FilmListPageState createState() => _FilmListPageState();
 }
 
-class _ListingItemListPageState extends State<ListingItemListPage> {
+class _FilmListPageState extends State<FilmListPage> {
   @override
   Widget build(BuildContext context) {
     return BaseScaffold(
@@ -22,7 +22,7 @@ class _ListingItemListPageState extends State<ListingItemListPage> {
               ? ListView(
                   scrollDirection: Axis.vertical,
                   children: List<Widget>.from(
-                      items.data.map((x) => ItemListingItemWidget(x))),
+                      items.data.map((x) => FilmListItemWidget(x))),
                 )
               : Center(
                   child:

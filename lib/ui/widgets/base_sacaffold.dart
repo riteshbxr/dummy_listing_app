@@ -15,7 +15,7 @@ class BaseScaffold extends StatelessWidget {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(this.title),
+        title: Text("${this.title}"),
       ),
       body: this.body,
       floatingActionButton: this.actionButton,

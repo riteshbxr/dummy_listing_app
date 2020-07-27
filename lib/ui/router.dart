@@ -10,7 +10,7 @@ class Router {
         return MaterialPageRoute(
             builder: (_) => MyHomePage(title: 'Demo for Fivrr'));
       case RoutePaths.ListPage:
-        return MaterialPageRoute(builder: (_) => ListingItemListPage());
+        return MaterialPageRoute(builder: (_) => FilmListPage());
 
       default:
         return MaterialPageRoute(

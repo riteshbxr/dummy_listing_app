@@ -1,8 +1,12 @@
+import 'package:dummy_listing_app/core/consts/api_urls.dart';
+
 import 'core/services/http_client_service.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
 import 'core/services/listing_service.dart';
+
+const bool isDummy = false;
 
 List<SingleChildWidget> providers = [
   ...independentServices,
@@ -11,12 +15,15 @@ List<SingleChildWidget> providers = [
 ];
 
 List<SingleChildWidget> independentServices = [
-  Provider<HttpClientService>.value(value: FakeHttpClientService())
+  Provider<HttpClientService>.value(
+      value: isDummy
+          ? FakeHttpClientService()
+          : HttpClientService(ApiUrls.baseUrl)),
 ];
 
 List<SingleChildWidget> dependentServices = [
   ProxyProvider<HttpClientService, ListingService>(
-      update: (context, client, apiService) => ListingService(client))
+      update: (context, client, apiService) => ListingService(client)),
 ];
 
 List<SingleChildWidget> uiConsumableProviders = [
