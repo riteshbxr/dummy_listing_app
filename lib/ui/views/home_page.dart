@@ -41,11 +41,16 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'This is Dummy Placeholder',
+              'Flutter Tips and Tricks as Used in this App',
               style: Theme.of(context).textTheme.headline6,
             ),
-            Text(
-              'Press the floating button to go to the List page',
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Center(
+                child: Text(
+                  'Goto to the github page of this app (As in details of the PlayStore) to See the code.. \r\n\r\nClick on the play Button to see the Tips.',
+                ),
+              ),
             ),
           ],
         ),

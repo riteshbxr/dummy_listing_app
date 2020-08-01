@@ -4,37 +4,49 @@ const ApiDummyOutputs = {
   ApiUrls.fetchListingApi: '''
 {
   "results": [
-
-      {
-          "id": 4,
-          "title": "A New Hope",
-          "opening_crawl": "It is a period of civil war.\\r\\nRebel spaceships, striking\\r\\nfrom a hidden base, have won\\r\\ntheir first victory against\\r\\nthe evil Galactic Empire.\\r\\n\\r\\nDuring the battle, Rebel\\r\\nspies managed to steal secret\\r\\nplans to the Empire's\\r\\nultimate weapon, the DEATH\\r\\nSTAR, an armored space\\r\\nstation with enough power\\r\\nto destroy an entire planet.\\r\\n\\r\\nPursued by the Empire's\\r\\nsinister agents, Princess\\r\\nLeia races home aboard her\\r\\nstarship, custodian of the\\r\\nstolen plans that can save her\\r\\npeople and restore\\r\\nfreedom to the galaxy...."
-      },
-      {
-          "id": 5,
-          "title": "The Empire Strikes Back",
-          "opening_crawl": "It is a dark time for the\\r\\nRebellion. Although the Death\\r\\nStar has been destroyed,\\r\\nImperial troops have driven the\\r\\nRebel forces from their hidden\\r\\nbase and pursued them across\\r\\nthe galaxy.\\r\\n\\r\\nEvading the dreaded Imperial\\r\\nStarfleet, a group of freedom\\r\\nfighters led by Luke Skywalker\\r\\nhas established a new secret\\r\\nbase on the remote ice world\\r\\nof Hoth.\\r\\n\\r\\nThe evil lord Darth Vader,\\r\\nobsessed with finding young\\r\\nSkywalker, has dispatched\\r\\nthousands of remote probes into\\r\\nthe far reaches of space...."
-      },
-      {
-          "id": 6,
-          "title": "Return of the Jedi",
-          "opening_crawl": "Luke Skywalker has returned to\\r\\nhis home planet of Tatooine in\\r\\nan attempt to rescue his\\r\\nfriend Han Solo from the\\r\\nclutches of the vile gangster\\r\\nJabba the Hutt.\\r\\n\\r\\nLittle does Luke know that the\\r\\nGALACTIC EMPIRE has secretly\\r\\nbegun construction on a new\\r\\narmored space station even\\r\\nmore powerful than the first\\r\\ndreaded Death Star.\\r\\n\\r\\nWhen completed, this ultimate\\r\\nweapon will spell certain doom\\r\\nfor the small band of rebels\\r\\nstruggling to restore freedom\\r\\nto the galaxy..."
-      },
       {
           "id": 1,
-          "title": "The Phantom Menace",
-          "opening_crawl": "Turmoil has engulfed the\\r\\nGalactic Republic. The taxation\\r\\nof trade routes to outlying star\\r\\nsystems is in dispute.\\r\\n\\r\\nHoping to resolve the matter\\r\\nwith a blockade of deadly\\r\\nbattleships, the greedy Trade\\r\\nFederation has stopped all\\r\\nshipping to the small planet\\r\\nof Naboo.\\r\\n\\r\\nWhile the Congress of the\\r\\nRepublic endlessly debates\\r\\nthis alarming chain of events,\\r\\nthe Supreme Chancellor has\\r\\nsecretly dispatched two Jedi\\r\\nKnights, the guardians of\\r\\npeace and justice in the\\r\\ngalaxy, to settle the conflict...."
-      },
-      {
-          "id": 2,
-          "title": "Attack of the Clones",
-          "opening_crawl": "There is unrest in the Galactic\\r\\nSenate. Several thousand solar\\r\\nsystems have declared their\\r\\nintentions to leave the Republic.\\r\\n\\r\\nThis separatist movement,\\r\\nunder the leadership of the\\r\\nmysterious Count Dooku, has\\r\\nmade it difficult for the limited\\r\\nnumber of Jedi Knights to maintain \\r\\npeace and order in the galaxy.\\r\\n\\r\\nSenator Amidala, the former\\r\\nQueen of Naboo, is returning\\r\\nto the Galactic Senate to vote\\r\\non the critical issue of creating\\r\\nan ARMY OF THE REPUBLIC\\r\\nto assist the overwhelmed\\r\\nJedi...."
-      },
-      {
-          "id": 3,
-          "title": "Revenge of the Sith",
-          "opening_crawl": "War! The Republic is crumbling\\r\\nunder attacks by the ruthless\\r\\nSith Lord, Count Dooku.\\r\\nThere are heroes on both sides.\\r\\nEvil is everywhere.\\r\\n\\r\\nIn a stunning move, the\\r\\nfiendish droid leader, General\\r\\nGrievous, has swept into the\\r\\nRepublic capital and kidnapped\\r\\nChancellor Palpatine, leader of\\r\\nthe Galactic Senate.\\r\\n\\r\\nAs the Separatist Droid Army\\r\\nattempts to flee the besieged\\r\\ncapital with their valuable\\r\\nhostage, two Jedi Knights lead a\\r\\ndesperate mission to rescue the\\r\\ncaptive Chancellor...."
-      }
+          "title": "Proxy Provider",
+          "subtitle": "Used for Dependency Injection",
+          "details":"Can Be used to set a central list of dependent and Independent class Objects.",
+           "implementation": "Currently I have a Central Provider in flutter, which has a Provider and a proxyprovicer object. Provider returns the implementations for services which have no dependency and Proxy Provider is used to return Objects which need another object/service in its constructor.\\r\\n\\r\\nIn current Scenario, There is a ListingService which provides data for this Page, but its needs a HTTPSERVICE. So LISTINg SERVICE is provided by PROXYPROVIDER and Http Api fetching service by the PROVIDER." 
+          },
+              {
+
+          "title": "Fake Implementations",
+          "subtitle": "Used for Testing Independently on App (Without Dependency on Api)",
+          "details":"Can Be used to set a dummy service to provide you output independent of any api/database",
+           "implementation": "Currently I have to fetch data from api to show this content, but alternatively to test the Proper working on app I have created another Fake Http Service which checks the ApiPath and returns a predetermined result in json format.\\r\\n\\r\\nI have another constant map file containing all the fake responses for any api. I use it to show results in FAKE HTTP SERVICE" 
+          },
+          {
+
+          "title": "build_runner for Fast Coding",
+          "subtitle": "Some Code Generators to code it fast",
+          "details":"Can be used to created serializers and deserializers for models (@jsonSerializable) etc",
+           "implementation": "More details Pending..." 
+          },
+          {
+
+          "title": "Project Architecture",
+          "subtitle": "Folder structure which can be easily maintained and scaled",
+          "details":"More details Pending....",
+           "implementation": "More details Pending..." 
+          },
+
+          {
+
+          "title": "Generic Widgets",
+          "subtitle": "Widgets which create good ui just from json data or some generic model",
+          "details":"The Details Page you see here is a geenric UI which iterated through a map and shows the output with title as Key and value as Details Text",
+          "Random Key": "Just to demonstrate that It is generic I have added this random key here" 
+          },
+          {
+          "id": 4,
+          "title": "More Cocepts will be added",
+          "subtitle": "...",
+          "details":"More details Pending....",
+           "implementation": "More details Pending..." 
+          }
   ]
 }'''
 };

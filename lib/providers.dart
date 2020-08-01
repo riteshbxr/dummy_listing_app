@@ -6,7 +6,7 @@ import 'package:provider/single_child_widget.dart';
 
 import 'core/services/listing_service.dart';
 
-const bool isDummy = false;
+const bool isDummy = true;
 
 List<SingleChildWidget> providers = [
   ...independentServices,

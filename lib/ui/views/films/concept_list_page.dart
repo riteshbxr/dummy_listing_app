@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import '../../../core/services/listing_service.dart';
 import '../../widgets/base_sacaffold.dart';
-import 'film_list_item_widget.dart';
+import 'concept_list_item_widget.dart';
 import 'package:provider/provider.dart';
 
-class FilmListPage extends StatefulWidget {
+class ConceptListPage extends StatefulWidget {
   @override
-  _FilmListPageState createState() => _FilmListPageState();
+  _ConceptListPageState createState() => _ConceptListPageState();
 }
 
-class _FilmListPageState extends State<FilmListPage> {
+class _ConceptListPageState extends State<ConceptListPage> {
   @override
   Widget build(BuildContext context) {
     return BaseScaffold(
-        title: "List of Movies!",
+        title: "List of Concepts Used!",
         body: FutureBuilder(
           initialData: [],
           future: Provider.of<ListingService>(context).getListings(),
@@ -22,7 +22,7 @@ class _FilmListPageState extends State<FilmListPage> {
               ? ListView(
                   scrollDirection: Axis.vertical,
                   children: List<Widget>.from(
-                      items.data.map((x) => FilmListItemWidget(x))),
+                      items.data.map((x) => ConceptListItemWidget(x))),
                 )
               : Center(
                   child:
